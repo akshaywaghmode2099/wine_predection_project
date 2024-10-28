@@ -3,6 +3,7 @@ import numpy as np
 import pickle
 model=pickle.load(open("model.pkl","rb"))
 app=Flask(__name__)
+handler=Mangum(app)
 @app.route("/")
 def wine():  
     return render_template('index1.html')
